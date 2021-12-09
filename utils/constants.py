@@ -1,0 +1,6 @@
+""" Constants to be used for utilities """
+VERBOSE_FALSE = 0
+VERBOSE_VERY_LOW = 0.5
+VERBOSE_BASIC = 1
+VERBOSE_TRUE = 2
+VERBOSE_VERY_HIGH = 3

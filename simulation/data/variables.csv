@@ -1,0 +1,12 @@
+vartype,varname,lval_1,lval_2,lval_3,c_lval_1,c_lval_2,c_lval_3
+context,sunny,poor,average,good,0,5,10
+context,temperature,poor,average,good,0,5,10
+context,lastVisit,poor,average,good,0,5,10
+context,dayTime,poor,average,good,0,5,10
+person,agitation,poor,average,good,0,5,10
+evaluation,emotions,poor,average,good,0,5,10
+evaluation,participation,poor,average,good,0,5,10
+evaluation,relaxed,poor,average,good,0,5,10
+evaluation,sleepQuality,poor,average,good,0,5,10
+evaluation,normCompliance,poor,average,good,0,5,10
+evaluation,boredom,poor,average,good,0,5,10

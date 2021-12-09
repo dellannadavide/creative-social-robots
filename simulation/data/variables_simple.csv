@@ -1,0 +1,3 @@
+vartype,varname,lval_1,lval_2,lval_3,c_lval_1,c_lval_2,c_lval_3
+context,sunny,poor,average,good,0,5,10
+evaluation,emotions,poor,average,good,0,5,10

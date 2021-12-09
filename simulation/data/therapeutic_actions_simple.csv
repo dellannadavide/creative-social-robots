@@ -1,0 +1,4 @@
+type of therapy;ta_id;sar_action;lval_1;lval_2;lval_3;c_lval_1;c_lval_2;c_lval_3;quantification;commens
+music/video therapy;mv;a_mv_pop_song_50;short;average;long;0;7;15;time (duration of activity);
+multimodal exercise/physical act;mm;a_mm_walk;short;normal;long;15;30;45;duration;
+
