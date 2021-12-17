@@ -37,9 +37,9 @@ and adapt the sar_agent.py file to support the new environment
 Creative Social Robots
 │   README.md                               
 │   requirements.txt                            # python dependencies
-│   run_experiments.py                         # Module to run experiments
-│   run_expeirment_commandline.py              # Module to run single experiment via commandline
-│   run_experiments_hpc_batch_chain.py         # Module to run experiments on a HPC with PBS
+│   run_experiments.py                          # Module to run experiments
+│   run_expeirment_commandline.py               # Module to run single experiment via commandline
+│   run_experiments_hpc_batch_chain.py          # Module to run experiments on a HPC with PBS
 │
 └───results                                     # Results reported in the paper
 │   └───noise                                   # Results obtained for S^* in the noise experiments
