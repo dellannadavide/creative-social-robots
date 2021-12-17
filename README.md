@@ -42,7 +42,7 @@ Creative Social Robots
 │   run_experiments_hpc_batch_chain.py          # Module to run experiments on a HPC with PBS
 │
 └───results                                     # Results reported in the paper
-│   └───noise                                   # Results obtained for S^* in the noise experiments
+│   └───noise                                   # Results obtained for S in the noise experiments
 │   └───syntheticpatients                       # Results obtained for the random patients without noise 
 │       └───random
 │           └───baseline                        # S_B
