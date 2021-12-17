@@ -45,10 +45,10 @@ Creative Social Robots
 │   └───noise                                   # Results obtained for S^* in the noise experiments
 │   └───syntheticpatients                       # Results obtained for the random patients without noise 
 │       └───random
-│           └───baseline                        # S^B
-│           └───nodiv                           # S^*_D
-│           └───norepcost                       # S^*_R
-│           └───star                            # S^*
+│           └───baseline                        # S_B
+│           └───nodiv                           # S_D
+│           └───norepcost                       # S_R
+│           └───star                            # S
 │   
 └───simulation                                  # The modules necessary to run a simulation
 │   |   interactionmodel.py                     # MAS Model (in MESA library terminology), to schedule and execute agents
