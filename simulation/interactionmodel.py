@@ -1,9 +1,11 @@
 from mesa import Model
 from mesa.time import BaseScheduler
 from simulation.agents.env_agent import EnvironmentAgent
+from simulation.agents.patient.fuzzy_patient_ds_agent import FuzzyPatientDSAgent
 from simulation.agents.patient.random_patient_agent_creator import RandomPatientAgentCreator
 from simulation.agents.patient.fuzzy_patient_agent import FuzzyPatientAgent
 from simulation.agents.patient.basic_patient_agent import PatientAgent
+from simulation.agents.sar.empty_sar_agent import EmptySARAgent
 from simulation.agents.sar.sar_agent import SARAgent
 
 
@@ -22,6 +24,11 @@ class NaoInteractionModel(Model):
         if sim_param["patient_type"] == "fuzzy":
             patient = FuzzyPatientAgent(sim_param["patient_name"], self, env, sim_param, ta_details, variables_details, pref_details, verbose)
             nao = SARAgent('Nao', self, patient, env, filename, sim_param, ta_details, variables_details, verbose,
+                           pref_details=pref_details)
+        if sim_param["patient_type"] == "fuzzy-ds":
+            patient = FuzzyPatientDSAgent(sim_param["patient_name"], self, env, sim_param, ta_details,
+                                        variables_details, pref_details, verbose)
+            nao = EmptySARAgent('Nao', self, patient, env, filename, sim_param, ta_details, variables_details, verbose,
                            pref_details=pref_details)
         if "random" in sim_param["patient_type"]:
             patient = RandomPatientAgentCreator(sim_param["patient_type"], self, env, sim_param, ta_details, variables_details, pref_details, verbose)

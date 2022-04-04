@@ -1,0 +1,115 @@
+type of therapy,ta_id,sar_action,lval_1,lval_2,lval_3,c_lval_1,c_lval_2,c_lval_3,quantification,commens,description
+normal,groupa,a_groupa_to_listen_to_the_radio,low,medium,high,0,7,14,,,to listen to the radio
+normal,groupa,a_groupa_to_listen_to_music,low,medium,high,0,7,14,,,to listen to music
+normal,groupa,a_groupa_to_read_a_novel,low,medium,high,0,7,14,,,to read a novel
+normal,groupa,a_groupa_to_read_abook_about_psychology,low,medium,high,0,7,14,,,to read abook about psychology
+normal,groupa,a_groupa_to_read_a_biography_book,low,medium,high,0,7,14,,,to read a biography book
+normal,groupa,a_groupa_to_read_a_comic_book,low,medium,high,0,7,14,,,to read a comic book
+normal,groupa,a_groupa_to_read_a_scientific_article,low,medium,high,0,7,14,,,to read a scientific article
+normal,groupa,a_groupa_to_study,low,medium,high,0,7,14,,,to study
+normal,groupa,a_groupa_to_do_my_course_assignments,low,medium,high,0,7,14,,,to do my course assignments
+normal,groupa,a_groupa_to_watch_tv,low,medium,high,0,7,14,,,to watch tv
+normal,groupa,a_groupa_to_watch_Netflix,low,medium,high,0,7,14,,,to watch Netflix
+normal,groupa,a_groupa_to_watch_a_romantic_movie,low,medium,high,0,7,14,,,to watch a romantic movie
+normal,groupa,a_groupa_to_watch_an_action_movie,low,medium,high,0,7,14,,,to watch an action movie
+normal,groupa,a_groupa_to_watch_an_adventure_movie,low,medium,high,0,7,14,,,to watch an adventure movie
+normal,groupa,a_groupa_to_watch_a_documentary_about_history,low,medium,high,0,7,14,,,to watch a documentary about history
+normal,groupa,a_groupa_to_watch_a_documentary_about_nature,low,medium,high,0,7,14,,,to watch a documentary about nature
+normal,groupa,a_groupa_to_watch_a_science_fiction_movie,low,medium,high,0,7,14,,,to watch a science fiction movie
+normal,groupa,a_groupa_to_watch_a_Disney_animation,low,medium,high,0,7,14,,,to watch a Disney animation
+normal,groupa,a_groupa_to_read/reply_to_my_emails,low,medium,high,0,7,14,,,to read/reply to my emails
+normal,groupb,a_groupb_to_make_work-related_calls,low,medium,high,0,7,14,,,to make work-related calls
+normal,groupb,a_groupb_to_have_work-related_meetings,low,medium,high,0,7,14,,,to have work-related meetings
+normal,groupb,a_groupb_to_surf_social_media,low,medium,high,0,7,14,,,to surf social media
+normal,groupb,a_groupb_to_talk_to_my_family,low,medium,high,0,7,14,,,to talk to my family
+normal,groupb,a_groupb_to_talk_to_my_friends,low,medium,high,0,7,14,,,to talk to my friends
+normal,groupb,a_groupb_to_visit_a_friend,low,medium,high,0,7,14,,,to visit a friend
+normal,groupb,a_groupb_to_go_to_a_restaurant,low,medium,high,0,7,14,,,to go to a restaurant
+normal,groupb,a_groupb_to_go_for_a_drink,low,medium,high,0,7,14,,,to go for a drink
+normal,groupb,a_groupb_to_go_to_the_movies,low,medium,high,0,7,14,,,to go to the movies
+normal,groupb,a_groupb_to_prepare_food_for_family,low,medium,high,0,7,14,,,to prepare food for family
+normal,groupb,a_groupb_to_drink_a_coffee/tea,low,medium,high,0,7,14,,,to drink a coffee/tea
+normal,groupb,a_groupb_to_cook/bake,low,medium,high,0,7,14,,,to cook/bake
+normal,groupb,a_groupb_to_play_chess,low,medium,high,0,7,14,,,to play chess
+normal,groupb,a_groupb_to_do_jigsaw_puzzles,low,medium,high,0,7,14,,,to do jigsaw puzzles
+normal,groupb,a_groupb_to_play_videogames,low,medium,high,0,7,14,,,to play videogames
+normal,groupb,a_groupb_to_play_a_board_game,low,medium,high,0,7,14,,,to play a board game
+normal,groupb,a_groupb_to_play_the_guitar,low,medium,high,0,7,14,,,to play the guitar
+normal,groupb,a_groupb_to_clean_the_house,low,medium,high,0,7,14,,,to clean the house
+normal,groupb,a_groupb_to_walk_my_dog,low,medium,high,0,7,14,,,to walk my dog
+normal,groupc,a_groupc_to_water_the_plants,low,medium,high,0,7,14,,,to water the plants
+normal,groupc,a_groupc_to_work_in_the_garden,low,medium,high,0,7,14,,,to work in the garden
+normal,groupc,a_groupc_to_iron_the_clothes,low,medium,high,0,7,14,,,to iron the clothes
+normal,groupc,a_groupc_to_do_the_laundry,low,medium,high,0,7,14,,,to do the laundry
+normal,groupc,a_groupc_to_buy_the_groceries,low,medium,high,0,7,14,,,to buy the groceries
+normal,groupc,a_groupc_to_practice_a_foreign_language,low,medium,high,0,7,14,,,to practice a foreign language
+normal,groupc,a_groupc_to_go_to_the_gym,low,medium,high,0,7,14,,,to go to the gym
+normal,groupc,a_groupc_to_go_to_the_swimming_pool,low,medium,high,0,7,14,,,to go to the swimming pool
+normal,groupc,a_groupc_to_exercise,low,medium,high,0,7,14,,,to exercise
+normal,groupc,a_groupc_to_have_a_walk,low,medium,high,0,7,14,,,to have a walk
+normal,groupc,a_groupc_to_go_cycling,low,medium,high,0,7,14,,,to go cycling
+normal,groupc,a_groupc_to_do_some_stretching,low,medium,high,0,7,14,,,to do some stretching
+normal,groupc,a_groupc_to_do_some_yoga,low,medium,high,0,7,14,,,to do some yoga
+normal,groupc,a_groupc_to_do_some_pilates,low,medium,high,0,7,14,,,to do some pilates
+normal,groupc,a_groupc_to_dance,low,medium,high,0,7,14,,,to dance
+normal,groupc,a_groupc_to_look_at_some_old_photos,low,medium,high,0,7,14,,,to look at some old photos
+user_def,grod,a_grod_to_read_a_book_about_psychology,low,medium,high,0,5,10,,,to read a book about psychology
+user_def,grod,a_grod_to_walk_in_the_sun,low,medium,high,0,5,10,,,to walk in the sun
+user_def,grod,a_grod_to_travel_on_a_train,low,medium,high,0,5,10,,,to travel on a train
+user_def,grod,a_grod_to_play_the_piano,low,medium,high,0,5,10,,,to play the piano
+user_def,grod,a_grod_to_spend_time_with_the_family,low,medium,high,0,5,10,,,to spend time with the family
+user_def,grod,a_grod_to_watch_a_comedy_with_family,low,medium,high,0,5,10,,,to watch a comedy with family
+user_def,grod,a_grod_to_paint,low,medium,high,0,5,10,,,to paint
+user_def,grod,a_grod_to_eat_warm_oatmeal,low,medium,high,0,5,10,,,to eat warm oatmeal
+user_def,grod,a_grod_to_travel_via_the_airport,low,medium,high,0,5,10,,,to travel via the airport
+user_def,grod,a_grod_to_do_administrative_work,low,medium,high,0,5,10,,,to do administrative work
+user_def,grod,a_grod_to_eat_sausage,low,medium,high,0,5,10,,,to eat sausage
+user_def,grod,a_grod_to_walk_under_the_rain,low,medium,high,0,5,10,,,to walk under the rain
+user_def,grod,a_grod_to_work_on_a_scientific_article,low,medium,high,0,5,10,,,to work on a scientific article
+user_def,grod,a_grod_to_listen_to_an_audiobook,low,medium,high,0,5,10,,,to listen to an audiobook
+user_def,grod,a_grod_paint,low,medium,high,0,5,10,,,paint
+user_def,grod,a_grod_to_watch_a_movie_at_home,low,medium,high,0,5,10,,,to watch a movie at home
+user_def,grod,a_grod_to_surf_social_media,low,medium,high,0,5,10,,,to surf social media
+user_def,grod,a_grod_to_listen_to_light_music,low,medium,high,0,5,10,,,to listen to light music
+user_def,grod,a_grod_to_try_a_new_recipe,low,medium,high,0,5,10,,,to try a new recipe
+user_def,grod,a_grod_to_watch_Netflix_with_the_family,low,medium,high,0,5,10,,,to watch Netflix with the family
+user_def,groe,a_groe_to_watch_a_comedy,low,medium,high,0,5,10,,,to watch a comedy
+user_def,groe,a_groe_to_watch_a_comedy_with_the_family,low,medium,high,0,5,10,,,to watch a comedy with the family
+user_def,groe,a_groe_to_cook_a_regular_recipe,low,medium,high,0,5,10,,,to cook a regular recipe
+user_def,groe,a_groe_to_watch_Netflix_alone,low,medium,high,0,5,10,,,to watch Netflix alone
+user_def,groe,a_groe_to_sit_in_the_garden,low,medium,high,0,5,10,,,to sit in the garden
+user_def,groe,a_groe_to_go_for_shopping,low,medium,high,0,5,10,,,to go for shopping
+user_def,groe,a_groe_to_walk_in_the_nature,low,medium,high,0,5,10,,,to walk in the nature
+user_def,groe,a_groe_to_give_water_to_the_garden,low,medium,high,0,5,10,,,to give water to the garden
+user_def,groe,a_groe_to_work,low,medium,high,0,5,10,,,to work
+user_def,groe,a_groe_to_go_to_the_beach,low,medium,high,0,5,10,,,to go to the beach
+user_def,groe,a_groe_to_walk_in_the_city_center,low,medium,high,0,5,10,,,to walk in the city center
+user_def,groe,a_groe_to_have_an_ice_cream_outside,low,medium,high,0,5,10,,,to have an ice cream outside
+user_def,groe,a_groe_to_go_outside_with_the_family,low,medium,high,0,5,10,,,to go outside with the family
+user_def,groe,a_groe_to_visit_friends,low,medium,high,0,5,10,,,to visit friends
+user_def,groe,a_groe_to_wake_up_late,low,medium,high,0,5,10,,,to wake up late
+user_def,groe,a_groe_to_visit_the_dentist,low,medium,high,0,5,10,,,to visit the dentist
+user_def,groe,a_groe_to_listen_to_old_music,low,medium,high,0,5,10,,,to listen to old music
+user_def,groe,a_groe_to_read_a_book_on_psychology,low,medium,high,0,5,10,,,to read a book on psychology
+user_def,groe,a_groe_to_cook,low,medium,high,0,5,10,,,to cook
+user_def,groe,a_groe_to_work_on_an_article,low,medium,high,0,5,10,,,to work on an article
+user_def,grof,a_grof_to_read_a_psychology_book,low,medium,high,0,5,10,,,to read a psychology book
+user_def,grof,a_grof_to_practice_a_foreign_language,low,medium,high,0,5,10,,,to practice a foreign language
+user_def,grof,a_grof_to_listen_to_light_music_while_working,low,medium,high,0,5,10,,,to listen to light music while working
+user_def,grof,a_grof_to_make_a_plan_for_my_tasks,low,medium,high,0,5,10,,,to make a plan for my tasks
+user_def,grof,a_grof_to_work_from_the_office,low,medium,high,0,5,10,,,to work from the office
+user_def,grof,a_grof_to_have_a_short_talk_with_a_friend,low,medium,high,0,5,10,,,to have a short talk with a friend
+user_def,grof,a_grof_to_manage_the_administrative_work,low,medium,high,0,5,10,,,to manage the administrative work
+user_def,grof,a_grof_to_have_scientific_discussions,low,medium,high,0,5,10,,,to have scientific discussions
+user_def,grof,a_grof_to_have_a_short_walk_in_the_sun,low,medium,high,0,5,10,,,to have a short walk in the sun
+user_def,grof,a_grof_to_walk_long_distances,low,medium,high,0,5,10,,,to walk long distances
+user_def,grof,a_grof_listen_to_music_while_idling,low,medium,high,0,5,10,,,listen to music while idling
+user_def,grof,a_grof_work_from_home,low,medium,high,0,5,10,,,work from home
+user_def,grof,a_grof_to_have_non-work-related_appointments,low,medium,high,0,5,10,,,to have non-work-related appointments
+user_def,grof,a_grof_to_walk_in_the_rain,low,medium,high,0,5,10,,,to walk in the rain
+user_def,grof,a_grof_to_talk_to_friends,low,medium,high,0,5,10,,,to talk to friends
+user_def,grof,a_grof_to_go_for_a_short_walk,low,medium,high,0,5,10,,,to go for a short walk
+user_def,grof,a_grof_to_stay_alone,low,medium,high,0,5,10,,,to stay alone
+user_def,grof,a_grof_to_read_a_book,low,medium,high,0,5,10,,,to read a book
+user_def,grof,a_grof_to_work_late,low,medium,high,0,5,10,,,to work late
+user_def,grof,a_grof_to_focus_on_delayed_tasks,low,medium,high,0,5,10,,,to focus on delayed tasks

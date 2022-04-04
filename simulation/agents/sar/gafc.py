@@ -28,11 +28,12 @@ class GAFC:
         self.param = param
         self.nao = nao
         self.verbose = self.nao.verbose
-        self.nr_val_input_var = 3
-        self.nr_val_action_var = 3
-        self.nr_val_eval_var = 5
+        self.nr_val_input_var = len(self.nao.dimensions_values[self.nao.contextual_var[0]])
+        self.nr_val_action_var = len(self.nao.dimensions_values[self.nao.action_var[0]])
+        self.nr_val_eval_var = len(self.nao.dimensions_values[self.nao.eval_var[0]])
 
     def run(self, init_population):
+        # print(init_population)
         """ First I resize the population in case it is bigger than expected"""
         resized_init_population = init_population
         pop = {}
@@ -61,7 +62,7 @@ class GAFC:
                 else:
                     break
             resized_init_population = numpy.array(resized_init_population)
-
+        # print(resized_init_population)
         """ Then I instantiate the GA"""
         # Create the instance
         ga_instance = UnpooledGA(num_generations=self.param["num_generations"],
@@ -152,10 +153,14 @@ class GAFC:
             print("Fitness value of the best population = {solution_fitness}".format(
                 solution_fitness=best_population_val))
             print("Generation of the best population : {solution_idx}".format(solution_idx=best_population_index))
+            # self.plot_result(title="PyGAD - Generation vs. Population Fitness", xlabel="Generation",
+            #             ylabel="Population Fitness", linewidth=3, save_dir=None, unique_populations_fitness=unique_populations_fitness)
 
         """Create and return the new rule base form the best population found"""
         best_unique_population = unique_populations[best_population_index]
         creative_rulebase = self.population2rulebase(best_unique_population)
+        if self.verbose == Constants.VERBOSE_BASIC:
+            print(creative_rulebase)
         return creative_rulebase, ga_instance.populations[best_population_index]
 
     def rule2chromosome(self, rule_info):
@@ -186,6 +191,9 @@ class GAFC:
         for i in range(math.ceil(math.log(self.nr_val_input_var + 1, 2))):
             default_input_val = default_input_val + "0"
         chromosome_premise = [default_input_val] * len(self.nao.creative_controller_possible_inputs)
+        # print(rule_info)
+        # print(rule_info[0])
+        # print(len(rule_info))
         for t in rule_info[0]:  # for every term in the premise
             term_var = t[0]
             term_val = t[1]
@@ -233,8 +241,10 @@ class GAFC:
 
     def rulebase2population(self, info_rulebase):
         """ Function that transforms a rule base into a population of chromsomomes """
+        # print(info_rulebase)
         population = None
         for ir in info_rulebase:
+            # print(ir)
             if population is None:
                 population = []
             population.append(self.rule2chromosome(ir))
@@ -272,7 +282,7 @@ class GAFC:
             for bit_ix in range(math.ceil(math.log(self.nr_val_input_var + 1, 2))):
                 binary_ith_in = binary_ith_in + str(chromosome[bit_ix + starting_index_i])
             ith_input_mf_index = int(binary_ith_in, 2) - 1
-            if ith_input_mf_index == -1:  # ignore the i-th input for this rule
+            if (ith_input_mf_index == -1) or (ith_input_mf_index>=self.nr_val_input_var):  # ignore the i-th input for this rule
                 continue
             ling_var_name = self.nao.creative_controller_possible_inputs[i]
             ling_var = self.nao.creative_controller_inputs_mf[ling_var_name]
@@ -399,7 +409,7 @@ class GAFC:
         """ Function that returns an assessment of a creative controller @creative_controller
          obtained with the asessor controller with inputs @inputs and the output of the @creative_controller when
          given inputs @inputs """
-        c_out, rules_activations = creative_controller.computeOutput(inputs, False)
+        c_out, rules_activations, is_exception = creative_controller.computeOutput(inputs, False)
         if self.verbose > Constants.VERBOSE_BASIC:
             print("assessing the creative controller")
             print("inputs")
@@ -414,7 +424,7 @@ class GAFC:
         for cout in c_out:
             a_inputs[cout] = c_out[cout]
             ta = self.nao.actions_to_ti[cout]
-            a_out, a_rules_activations = self.nao.assessors[ta].computeOutput(a_inputs)
+            a_out, a_rules_activations, is_exception = self.nao.assessors[ta].computeOutput(a_inputs)
             for ao in a_out:
                 if ao in output_assessors:
                     output_assessors[ao].append(a_out[ao])

@@ -63,6 +63,7 @@ class FuzzyController:
     def compute(self, verbose=False):
         rules_activations = {}
         c_out = {}
+        is_exception = False
 
         self.controlsystem.input._update_to_current()
         if verbose>Constants.VERBOSE_BASIC:
@@ -100,6 +101,7 @@ class FuzzyController:
                 # in case it fails to defuzzify because the area is 0, then I give the default value to the variable
                 # print("Zero defuzz area for "+str(consequent.label))
                 c_out[consequent.label] = FuzzyController.variables_default_val[consequent.label]
+                is_exception = True
 
         if verbose>Constants.VERBOSE_BASIC:
             print("assessor inputs")
@@ -110,7 +112,7 @@ class FuzzyController:
             print("c_outs " + str(c_out))
 
         self.controlsystem._reset_simulation()
-        return c_out, rules_activations
+        return c_out, rules_activations, is_exception
 
     def computeOutput(self, inputs, verbose=False):
         self.feed_inputs(inputs)

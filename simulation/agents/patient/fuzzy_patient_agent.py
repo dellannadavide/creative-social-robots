@@ -66,7 +66,8 @@ class FuzzyPatientAgent(Agent):
     def step(self):
         """
         Step function executed at every simuation step
-        The patient (i) get the current input from the environment agent
+        The patient
+        (i) gets the current input from the environment agent
          (ii) receives the suggested activity from the SAR
          (iii) feeds (i) and (ii) to the fuzzy controller to determine feedback output
          (iv) sets its current feedback to the value obtained in (iii). This value will be retrieved then by the SAR
@@ -89,11 +90,13 @@ class FuzzyPatientAgent(Agent):
 
             ta = self.actions_to_ti[prop_activity]
             self.controllers[ta].feed_inputs(inputs)
+            is_exception = False
             controllerout = []
             try:
-                c_out, a_rules_activations = self.controllers[ta].compute(verbose=False)
+                c_out, a_rules_activations, is_exception = self.controllers[ta].compute(verbose=False)
                 controllerout = [c_out[co] for co in c_out]
             except:
+                is_exception = True
                 #todo assumes that every controller has same output var
                 for v in self.eval_var:
                     controllerout.append(self.variables_default_val[v])

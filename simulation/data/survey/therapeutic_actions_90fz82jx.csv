@@ -1,0 +1,116 @@
+type of therapy,ta_id,sar_action,lval_1,lval_2,lval_3,c_lval_1,c_lval_2,c_lval_3,quantification,commens,description
+work-related,work,a_work_to_work,low,medium,high,0,7,14,,,to work
+work-related,work,a_work_to_read_a_scientific_article,low,medium,high,0,7,14,,,to read a scientific article
+work-related,work,a_work_to_study,low,medium,high,0,7,14,,,to study
+work-related,work,a_work_to_do_my_course_assignments,low,medium,high,0,7,14,,,to do my course assignments
+work-related,work,a_work_to_read/reply_to_my_emails,low,medium,high,0,7,14,,,to read/reply to my emails
+work-related,work,a_work_to_make_work-related_calls,low,medium,high,0,7,14,,,to make work-related calls
+work-related,work,a_work_to_have_work-related_meetings,low,medium,high,0,7,14,,,to have work-related meetings
+work-related,work,a_work_to_do_administrative_work,low,medium,high,0,7,14,,,to do administrative work
+work-related,work,a_work_to_work_on_a_scientific_article,low,medium,high,0,7,14,,,to work on a scientific article
+work-related,work,a_work_to_listen_to_light_music_while_working,low,medium,high,0,7,14,,,to listen to light music while working
+work-related,work,a_work_to_make_a_plan_for_my_tasks,low,medium,high,0,7,14,,,to make a plan for my tasks
+work-related,work,a_work_to_work_from_the_office,low,medium,high,0,7,14,,,to work from the office
+work-related,work,a_work_to_have_scientific_discussions,low,medium,high,0,7,14,,,to have scientific discussions
+work-related,work,a_work_to_work_from_home,low,medium,high,0,7,14,,,to work from home
+work-related,work,a_work_to_work_late,low,medium,high,0,7,14,,,to work late
+work-related,work,a_work_to_focus_on_delayed_tasks,low,medium,high,0,7,14,,,to focus on delayed tasks
+work-related,work,a_work_to_have_meetings,low,medium,high,0,7,14,,,to have meetings
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_tv,low,medium,high,0,7,14,,,to watch tv
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_Netflix,low,medium,high,0,7,14,,,to watch Netflix
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_romantic_movie,low,medium,high,0,7,14,,,to watch a romantic movie
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_an_action_movie,low,medium,high,0,7,14,,,to watch an action movie
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_an_adventure_movie,low,medium,high,0,7,14,,,to watch an adventure movie
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_documentary_about_history,low,medium,high,0,7,14,,,to watch a documentary about history
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_documentary_about_nature,low,medium,high,0,7,14,,,to watch a documentary about nature
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_science_fiction_movie,low,medium,high,0,7,14,,,to watch a science fiction movie
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_Disney_animation,low,medium,high,0,7,14,,,to watch a Disney animation
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_movie_at_home,low,medium,high,0,7,14,,,to watch a movie at home
+TV Music and Movies,tvmusmov,a_tvmusmov_to_watch_a_comedy,low,medium,high,0,7,14,,,to watch a comedy
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_the_radio,low,medium,high,0,7,14,,,to listen to the radio
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_music,low,medium,high,0,7,14,,,to listen to music
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_an_audiobook,low,medium,high,0,7,14,,,to listen to an audiobook
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_light_music,low,medium,high,0,7,14,,,to listen to light music
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_pop_music,low,medium,high,0,7,14,,,to listen to pop music
+TV Music and Movies,tvmusmov,a_tvmusmov_to_listen_to_old_music,low,medium,high,0,7,14,,,to listen to old music
+Entertainment,entert,a_entert_to_play_chess,low,medium,high,0,7,14,,,to play chess
+Entertainment,entert,a_entert_to_do_jigsaw_puzzles,low,medium,high,0,7,14,,,to do jigsaw puzzles
+Entertainment,entert,a_entert_to_play_videogames,low,medium,high,0,7,14,,,to play videogames
+Entertainment,entert,a_entert_to_play_a_board_game,low,medium,high,0,7,14,,,to play a board game
+Entertainment,entert,a_entert_to_play_the_guitar,low,medium,high,0,7,14,,,to play the guitar
+Entertainment,entert,a_entert_to_practice_a_foreign_language,low,medium,high,0,7,14,,,to practice a foreign language
+Entertainment,entert,a_entert_to_play_the_piano,low,medium,high,0,7,14,,,to play the piano
+Entertainment,entert,a_entert_to_paint,low,medium,high,0,7,14,,,to paint
+At home,athome,a_athome_to_prepare_food_for_family,low,medium,high,0,7,14,,,to prepare food for family
+At home,athome,a_athome_to_drink_a_coffee/tea,low,medium,high,0,7,14,,,to drink a coffee/tea
+At home,athome,a_athome_to_cook/bake,low,medium,high,0,7,14,,,to cook/bake
+At home,athome,a_athome_to_clean_the_house,low,medium,high,0,7,14,,,to clean the house
+At home,athome,a_athome_to_iron_the_clothes,low,medium,high,0,7,14,,,to iron the clothes
+At home,athome,a_athome_to_do_the_laundry,low,medium,high,0,7,14,,,to do the laundry
+At home,athome,a_athome_to_eat_warm_oatmeal,low,medium,high,0,7,14,,,to eat warm oatmeal
+At home,athome,a_athome_to_eat_sausage,low,medium,high,0,7,14,,,to eat sausage
+At home,athome,a_athome_to_try_a_new_recipe,low,medium,high,0,7,14,,,to try a new recipe
+At home,athome,a_athome_to_cook_a_regular_recipe,low,medium,high,0,7,14,,,to cook a regular recipe
+Outdoor,outdoor,a_outdoor_to_walk_my_dog,low,medium,high,0,7,14,,,to walk my dog
+Outdoor,outdoor,a_outdoor_to_water_the_plants,low,medium,high,0,7,14,,,to water the plants
+Outdoor,outdoor,a_outdoor_to_work_in_the_garden,low,medium,high,0,7,14,,,to work in the garden
+Outdoor,outdoor,a_outdoor_to_buy_the_groceries,low,medium,high,0,7,14,,,to buy the groceries
+Outdoor,outdoor,a_outdoor_to_sit_in_the_garden,low,medium,high,0,7,14,,,to sit in the garden
+Outdoor,outdoor,a_outdoor_to_walk_in_the_nature,low,medium,high,0,7,14,,,to walk in the nature
+Outdoor,outdoor,a_outdoor_to_give_water_to_the_garden,low,medium,high,0,7,14,,,to give water to the garden
+Outdoor,outdoor,a_outdoor_to_walk_long_distances,low,medium,high,0,7,14,,,to walk long distances
+Outdoor,outdoor,a_outdoor_to_walk_in_the_sun,low,medium,high,0,7,14,,,to walk in the sun
+Outdoor,outdoor,a_outdoor_to_walk_in_the_rain,low,medium,high,0,7,14,,,to walk in the rain
+Outdoor,outdoor,a_outdoor_to_go_for_a_short_walk,low,medium,high,0,7,14,,,to go for a short walk
+Sport,sport,a_sport_to_go_to_the_gym,low,medium,high,0,7,14,,,to go to the gym
+Sport,sport,a_sport_to_go_to_the_swimming_pool,low,medium,high,0,7,14,,,to go to the swimming pool
+Sport,sport,a_sport_to_exercise,low,medium,high,0,7,14,,,to exercise
+Sport,sport,a_sport_to_have_a_walk,low,medium,high,0,7,14,,,to have a walk
+Sport,sport,a_sport_to_go_cycling,low,medium,high,0,7,14,,,to go cycling
+Sport,sport,a_sport_to_do_some_stretching,low,medium,high,0,7,14,,,to do some stretching
+Sport,sport,a_sport_to_do_some_yoga,low,medium,high,0,7,14,,,to do some yoga
+Sport,sport,a_sport_to_go_bouldering,low,medium,high,0,7,14,,,to go bouldering
+Sport,sport,a_sport_to_play_football,low,medium,high,0,7,14,,,to play football
+Sport,sport,a_sport_to_do_some_pilates,low,medium,high,0,7,14,,,to do some pilates
+Sport,sport,a_sport_to_dance,low,medium,high,0,7,14,,,to dance
+Going places,going,a_going_to_go_to_a_restaurant,low,medium,high,0,7,14,,,to go to a restaurant
+Going places,going,a_going_to_go_for_a_drink,low,medium,high,0,7,14,,,to go for a drink
+Going places,going,a_going_to_go_to_the_movies,low,medium,high,0,7,14,,,to go to the movies
+Going places,going,a_going_to_go_for_shopping,low,medium,high,0,7,14,,,to go for shopping
+Going places,going,a_going_to_go_to_the_beach,low,medium,high,0,7,14,,,to go to the beach
+Going places,going,a_going_to_walk_in_the_city_center,low,medium,high,0,7,14,,,to walk in the city center
+Going places,going,a_going_to_have_an_ice_cream_outside,low,medium,high,0,7,14,,,to have an ice cream outside
+Going places,going,a_going_to_visit_the_dentist,low,medium,high,0,7,14,,,to visit the dentist
+Going places,going,a_going_to_travel_on_a_train,low,medium,high,0,7,14,,,to travel on a train
+Going places,going,a_going_to_travel_via_the_airport,low,medium,high,0,7,14,,,to travel via the airport
+Friends and Family,friends,a_friends_to_surf_social_media,low,medium,high,0,7,14,,,to surf social media
+Friends and Family,friends,a_friends_to_talk_to_my_family,low,medium,high,0,7,14,,,to talk to my family
+Friends and Family,friends,a_friends_to_talk_to_my_friends,low,medium,high,0,7,14,,,to talk to my friends
+Friends and Family,friends,a_friends_to_spend_time_with_the_family,low,medium,high,0,7,14,,,to spend time with the family
+Friends and Family,friends,a_friends_to_watch_a_comedy_with_family,low,medium,high,0,7,14,,,to watch a comedy with family
+Friends and Family,friends,a_friends_to_watch_Netflix_with_the_family,low,medium,high,0,7,14,,,to watch Netflix with the family
+Friends and Family,friends,a_friends_to_watch_a_comedy_with_the_family,low,medium,high,0,7,14,,,to watch a comedy with the family
+Friends and Family,friends,a_friends_to_go_outside_with_the_family,low,medium,high,0,7,14,,,to go outside with the family
+Friends and Family,friends,a_friends_to_have_a_short_talk_with_a_friend,low,medium,high,0,7,14,,,to have a short talk with a friend
+Friends and Family,friends,a_friends_to_visit_a_friend,low,medium,high,0,7,14,,,to visit a friend
+Friends and Family,friends,a_friends_to_have_non-work-related_appointments,low,medium,high,0,7,14,,,to have non-work-related appointments
+Individual,individual,a_individual_to_look_at_some_old_photos,low,medium,high,0,7,14,,,to look at some old photos
+Individual,individual,a_individual_to_wake_up_late,low,medium,high,0,7,14,,,to wake up late
+Individual,individual,a_individual_to_listen_to_music_while_idling,low,medium,high,0,7,14,,,to listen to music while idling
+Individual,individual,a_individual_to_stay_alone,low,medium,high,0,7,14,,,to stay alone
+Individual,individual,a_individual_to_read_a_novel,low,medium,high,0,7,14,,,to read a novel
+Individual,individual,a_individual_to_read_a_book_about_psychology,low,medium,high,0,7,14,,,to read a book about psychology
+Individual,individual,a_individual_to_read_a_biography_book,low,medium,high,0,7,14,,,to read a biography book
+Individual,individual,a_individual_to_read_a_comic_book,low,medium,high,0,7,14,,,to read a comic book
+Individual,individual,a_individual_to_read_a_book,low,medium,high,0,7,14,,,to read a book
+Individual,individual,a_individual_to_watch_Netflix_alone,low,medium,high,0,7,14,,,to watch Netflix alone
+Individual,individual,a_individual_to_meditate,low,medium,high,0,7,14,,,to meditate
+user_def,user,a_user_to_drink_tea,low,medium,high,0,5,10,,,to drink tea
+user_def,user,a_user_to_wake_up_early,low,medium,high,0,5,10,,,to wake up early
+user_def,user,a_user_to_watch_TV_with_family,low,medium,high,0,5,10,,,to watch TV with family
+user_def,user,a_user_to_go_to_a_lake,low,medium,high,0,5,10,,,to go to a lake
+user_def,user,a_user_to_go_outside_for_lunch,low,medium,high,0,5,10,,,to go outside for lunch
+user_def,user,a_user_to_go_to_dentist,low,medium,high,0,5,10,,,to go to dentist
+user_def,user,a_user_to_stay_inside_home,low,medium,high,0,5,10,,,to stay inside home
+user_def,user,a_user_to_cook_familiar_food,low,medium,high,0,5,10,,,to cook familiar food
+user_def,user,a_user_to_cook_a_new_recipe,low,medium,high,0,5,10,,,to cook a new recipe

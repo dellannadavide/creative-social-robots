@@ -19,8 +19,8 @@ if __name__ == '__main__':
 
     now = datetime.now()
     all_experiments_timestamp = str(now.strftime("%Y%m%d%H%M%S"))
-    data_folder = "simulation/data/"
-    results_folder = "results/exp_" + all_experiments_timestamp + "/"
+    data_folder = "../simulation/data/"
+    results_folder = "../results/exp_" + all_experiments_timestamp + "/"
     Path(results_folder).mkdir(parents=True, exist_ok=True)
     verbose = Constants.VERBOSE_BASIC
 

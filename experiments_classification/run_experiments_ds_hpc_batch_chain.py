@@ -32,7 +32,7 @@ def submitJob(index_list, allNames, results_folder, all_experiments_timestamp, v
         exp_param_args = exp_param_args + "results_folder=" + str(results_folder) + " all_experiments_timestamp=" + str(
             all_experiments_timestamp) + " verbose=" + str(verbose)
         # print(exp_param_args)
-        command_concat_str = command_concat_str + ("" if (command_concat_str == "") else " &" ) + "python3 ./run_experiment_commandline.py "+str(exp_param_args)
+        command_concat_str = command_concat_str + ("" if (command_concat_str == "") else " &" ) + "python3 ./run_experiment_ds_commandline.py "+str(exp_param_args)
         exp_ind = exp_ind + 1
 
     p = subprocess.Popen('qsub', stdout=subprocess.PIPE, stdin=subprocess.PIPE, shell=False)
@@ -40,8 +40,8 @@ def submitJob(index_list, allNames, results_folder, all_experiments_timestamp, v
     job_name = "gafc_%s_%d-%d" % (all_experiments_timestamp[-3:], index_list[0], index_list[-1])
     email = "d.dellanna@tudelft.nl"
     # walltime = "00:01:00"
-    processors = "nodes=1:ppn=%d" % len(index_list)
-    # processors = "nodes=1:ppn=20"
+    # processors = "nodes=1:ppn=%d" % len(index_list)
+    processors = "nodes=1:ppn=20"
     command = command_concat_str + " & wait"
 
     job_string = """#!/bin/bash
@@ -78,8 +78,8 @@ def main():
     now = datetime.now()
     all_experiments_timestamp = str(now.strftime("%Y%m%d%H%M%S"))
     all_experiments_identifier = "exp"
-    data_folder = "simulation/data/"
-    results_folder = "results/exp_"+all_experiments_identifier+"_" + all_experiments_timestamp + "/"
+    data_folder = "../simulation/data/survey/"
+    results_folder = "../results/exp_"+all_experiments_identifier+"_" + all_experiments_timestamp + "/"
     Path(results_folder).mkdir(parents=True, exist_ok=True)
     verbose = Constants.VERBOSE_FALSE
 
@@ -90,40 +90,43 @@ def main():
     exp_possible_val = {
         'nr_interactions': [4000],
         'nr_steps': [1],
-        'sampling_trials': [1],
+        'sampling_trials': [10],
         'num_generations': [50],
         'nr_rules': [20],
-        'rate_parents_mating': [0.8],
+        'rate_parents_mating': [0.5],
         'parent_selection_type': ['sss'],
         'keep_parents': [1],
         'crossover_type': ['uniform'],
         'mutation_type': ['random'],
         'mutation_probability': [0.25],
         'crossover_probability': [1],
-        'complexity_cost': [0], # todo currently not supported -> ignore
-        'creativity_gain': [0], # todo currently not supported -> ignore
+        'complexity_cost': [0],  # todo currently not supported -> ignore
+        'creativity_gain': [0],  # todo currently not supported -> ignore
         'learning_rate_weights': [0.01],
         'learning_rate_credits': [0.04],  # should be >0, with 0 the system will not learn
         'default_credit': [1],
         'universes_granularity': [10],
-        'compute_disabled_counterparts_credits': [False], # todo currently not supported -> ignore
+        'compute_disabled_counterparts_credits': [False],  # todo currently not supported -> ignore
         'consider_repetition_cost': [True],
         'multiplier_last_n_step_negative_repetition': [7],  # 2,7
-        'last_n_steps_repetition_halving_cost': [10],  # 0,2,10
-        'update_arules': [False], # todo currently not supported -> ignore
-        'reassess_weights': [False], # todo currently not supported -> ignore
-        'population_diversity_importance': [0.5], # should be in [0,1]
-        'therapies_activities_diversity_importance_ratio': [0.75], # should be in [0,1]
-        'patient_type': ['random'],
-        'patient_name': ['PatientA'],
-        'patient_models_file': ['none'], # to be ignored for the synthetic patients and noise experiments
-        'therapeutic_actions_details_file': [data_folder + "therapeutic_actions_PATIENTNAME.csv"], # leave the _PATIENTNAME suffix, it will be replaced later
-        'variables_details_file': [data_folder + "variables_simple.csv"],
-        'preferences_details_file': [data_folder + "preferences_PATIENTNAME.xlsx"], # relevant only for experiments not currently reported in the paper
+        'last_n_steps_repetition_halving_cost': [2],  # 0,2,10
+        'update_arules': [False],  # todo currently not supported -> ignore
+        'reassess_weights': [False],  # todo currently not supported -> ignore
+        'population_diversity_importance': [0.0],  # should be in [0,1]
+        'therapies_activities_diversity_importance_ratio': [0.5],  # should be in [0,1]
+        'patient_type': ['fuzzy_ds'],
+        'patient_name': ['90fz82jx', '2ej6b2i7', '5shw42l7', '24i4ipu5', 'ti0bl836', 'x1bislx9', 'pk2bj10v', 'er1qsv6w', '7ei0i2op', 'xglzxsb9', '3ejs2f6p', 'zvwm632u', 'c00gr4wo', 'e33p12vr', 'y4vnuqyu'],
+        # 'patient_name': ['y4vnuqyu'],
+        # 'patient_name': ['2ej6b2i7'],
+        'patient_models_file': ['none'],  # to be ignored for the synthetic patients and noise experiments
+        'therapeutic_actions_details_file': [data_folder + "therapeutic_actions_PATIENTNAME.csv"],
+        # leave the _PATIENTNAME suffix, it will be replaced later
+        'variables_details_file': [data_folder + "variables_survey.csv"],
+        'preferences_details_file': [data_folder + "preferences_PATIENTNAME.xlsx"],
         'personalize': [True],
-        'noise_probability': [0], # should be in [0,1]
-        'noise_type': ['none'], # can be 'gaussian', 'inv_gaussian', 'reversed_feedback',
-        'trial': list(range(200)) # can also be just one value [0]
+        'noise_probability': [0],  # should be in [0,1]
+        'noise_type': ['none'],  # can be 'gaussian', 'inv_gaussian', 'reversed_feedback',
+        'trial': [0]  # can also be just one value [0]
     }
 
     """
@@ -147,7 +150,7 @@ def main():
     then the script will first send max_nr_batches first, then start a timer and every 5 minutes checks if some
     slots are available (i.e., if the current number of running jobs is < max_nr_batches) 
     and sends new jobs to fill the available slots, until all experiments are run. """
-    max_number_experiments_per_batch = 20
+    max_number_experiments_per_batch = 3
     max_nr_batches = 10
 
     """ By tweaking the following two parameters it is possible to skip some of the experiments and repeat others

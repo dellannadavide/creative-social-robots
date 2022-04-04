@@ -47,9 +47,9 @@ class Personalizer:
                         num=9.0
                         den=5.0
                         # num/det = 1.8
-                        if (k['detected_emotions'] - variables_default_val['emotions']) >= 0:
+                        if (k['detected_emotions'] - variables_default_val['emotions']) >= 0: #if the response was positive (i.e., above the mid value)
                             reward = pow(k['detected_emotions'] - variables_default_val['emotions'], num/den)
-                        else:
+                        else: #if it was negative
                             reward = pow(-1, num) * pow(abs(k['detected_emotions'] - variables_default_val['emotions']), num / den)
                         change = self.param["learning_rate_credits"] * (reward * (k['rules_activations'][r] / sum_act))
                         new_credits[r] = new_credits[r] + change  # the update rule
@@ -88,10 +88,11 @@ class Personalizer:
                     print("UPDATE WEIGHTS TIME ELAPSED --- %s seconds ---" % (time.time() - start_time))
 
             """ Update the credits """
-            if self.verbose == Constants.VERBOSE_BASIC:
-                print("Updating rules credits ...")
-            self.nao.rules_credits = self.updateCredits(self.nao.collectedKnowledge, self.nao.rules_credits,
-                                                                 self.nao.variables_default_val)
+            if self.nao.update_credits:
+                if self.verbose == Constants.VERBOSE_BASIC:
+                    print("Updating rules credits ...")
+                self.nao.rules_credits = self.updateCredits(self.nao.collectedKnowledge, self.nao.rules_credits,
+                                                                     self.nao.variables_default_val)
 
             """ [Optional, currently not supported] Updates the a-rules"""
             if self.param["update_arules"]:
@@ -109,24 +110,25 @@ class Personalizer:
                 if self.verbose == Constants.VERBOSE_BASIC:
                     print("UPDATE A-RULES TIME ELAPSED --- %s seconds ---" % (time.time() - start_time))
 
-            """ Evolve the C-Rules with Genetic Algorithms"""
-            if self.verbose == Constants.VERBOSE_BASIC:
-                print("Evolving c-rules ...")
-            start_time = time.time()
-            creative_rulebase, population = self.evolveCRules(self.nao.last_population)
-            self.nao.creative_controller = FuzzyController(self.nao.dimensions_values,
-                                                          self.nao.variables_universe,
-                                                          self.nao.fuzzysets_values,
-                                                          self.nao.variables_default_val,
-                                                          self.nao.creative_controller_possible_inputs,
-                                                          self.nao.creative_controller_possible_outputs,
-                                                          creative_rulebase)
-            if self.verbose == Constants.VERBOSE_BASIC:
-                print(str(len(creative_rulebase)) + " c-rules")
-            self.nao.last_population = population
-            self.insertNewCredits()
-            if self.verbose == Constants.VERBOSE_BASIC:
-                print("EVOLVE C-RULES TIME ELAPSED --- %s seconds ---" % (time.time() - start_time))
+            if not self.nao.training_mode:
+                """ Evolve the C-Rules with Genetic Algorithms"""
+                if self.verbose == Constants.VERBOSE_BASIC:
+                    print("Evolving c-rules ...")
+                start_time = time.time()
+                creative_rulebase, population = self.evolveCRules(self.nao.last_population)
+                self.nao.creative_controller = FuzzyController(self.nao.dimensions_values,
+                                                              self.nao.variables_universe,
+                                                              self.nao.fuzzysets_values,
+                                                              self.nao.variables_default_val,
+                                                              self.nao.creative_controller_possible_inputs,
+                                                              self.nao.creative_controller_possible_outputs,
+                                                              creative_rulebase)
+                if self.verbose == Constants.VERBOSE_BASIC:
+                    print(str(len(creative_rulebase)) + " c-rules")
+                self.nao.last_population = population
+                self.insertNewCredits()
+                if self.verbose == Constants.VERBOSE_BASIC:
+                    print("EVOLVE C-RULES TIME ELAPSED --- %s seconds ---" % (time.time() - start_time))
 
     def evolveCRules(self, init_population):
         """ Function that invokes the genetic algorithm to evolve the c-rules and returns a new population (rule  base)

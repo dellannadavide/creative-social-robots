@@ -32,7 +32,7 @@ def importDataFromFiles(ta_details, variables_details, param, preferences_detail
             max,
         ]
         variables_crisp_inputs[c] = var_possible_val[c][2]  # default val is the middle val
-    for c in eval_var:
+    for c in contextual_var+eval_var:
         min = float(variables_details.loc[(variables_details['varname'] == c), 'c_lval_1'].iloc[0])
         max = float(variables_details.loc[(variables_details['varname'] == c), 'c_lval_3'].iloc[0])
         step = (max-min)/(5.0-1)
@@ -98,7 +98,7 @@ def importDataFromFiles(ta_details, variables_details, param, preferences_detail
             var_middleval = var_possible_val[v][1]
             var_maxval = var_possible_val[v][2]
 
-            if v in eval_var:
+            if v in contextual_var+eval_var:
                 var_minval = var_possible_val[v][0]
                 var_secondval = var_possible_val[v][1]
                 var_middleval = var_possible_val[v][2]
@@ -108,7 +108,7 @@ def importDataFromFiles(ta_details, variables_details, param, preferences_detail
             variables_universe[v] = numpy.arange(var_minval, var_maxval + 1,
                                                       (var_maxval - var_minval) / param["universes_granularity"])
 
-            if v in eval_var:
+            if v in contextual_var+eval_var:
                 dimensions_values[v] = [
                     "very " + str(variables_details.loc[(variables_details['varname'] == v), 'lval_1'].iloc[0]),
                     variables_details.loc[(variables_details['varname'] == v), 'lval_1'].iloc[0],
@@ -316,6 +316,12 @@ def getSimpleModalityLinguisticInterpretation(ta_details_df, prop_activity, prop
         prop_activity_interpretation = pref_lval2
     return prop_activity_interpretation
 
+def getActionCenterCrispVal(ta_details_df, activity):
+    return ta_details_df.loc[(ta_details_df['sar_action'] == activity), 'c_lval_2'].iloc[0]
+
+def getActionCenterLingVal(ta_details_df, activity):
+    return ta_details_df.loc[(ta_details_df['sar_action'] == activity), 'lval_2'].iloc[0]
+
 def getSimpleInputLinguisticInterpretation(var_details_df, input):
     """ Function that provides a simple linguistic interpretation of the value of input variables
         by splitting the universe of discourse in 3 parts (assuming the variable has 3 possible values) """
@@ -345,6 +351,26 @@ def getSimpleInputLinguisticInterpretation(var_details_df, input):
         ling_input[i] = interpretation
     return ling_input
 
+def getInputLinguisticInterpretation(var_details_df, input, var_possible_val, variables_universe, dimensions_values):
+    """ Function that provides a simple linguistic interpretation of the value of input variables """
+    ling_input = {}
+    for i in input:
+        min = var_possible_val[i][0]
+        max = var_possible_val[i][-1]
+        nr_ling_val = len(var_possible_val[i])
+        delta = float((max - min) / nr_ling_val) + 0.01  # todo hardcoded for now
+
+        j = 0
+        while True:
+            if input[i] <= (var_possible_val[i][j] + delta):
+                interpretation = dimensions_values[i][j]
+                break
+            if input[i] >= (var_possible_val[i][-1-j] - delta):
+                interpretation = dimensions_values[i][-1-j]
+                break
+            j=j+2
+        ling_input[i] = interpretation
+    return ling_input
 
 def getRepetitionCost(action, logInteractions, param):
     """ Function that given an activity @action and the interactions memory returns the repetition cost,
