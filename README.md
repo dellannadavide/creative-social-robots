@@ -2,7 +2,7 @@
 
 This repository contains 
 - A prototypical python implementation of an architecture for 
-creative long-term personalization of Socially Assistive Robots (SARs) combining fuzzy logic control and genetic algorithms via EFSAR (Evolving Fuzzy system for Socially Assistive Robots). 
+creative long-term personalization of Socially Assistive Robots (SARs) combining fuzzy logic control and genetic algorithms via EFS4SAR (Evolving Fuzzy system for Socially Assistive Robots). 
 The protoype allows a SAR to autonomously evolve, via genetic algorithms, the fuzzy rules that govern its interactions, 
 and in particular the types of activities that the SAR can suggest and conduct together, with the patient. 
 The evolutionary process allows to perform long-term personalization in a creative way.
@@ -67,7 +67,7 @@ Creative Social Robots
 │           └───nodiv                           # S_D
 │           └───norepcost                       # S_R
 │           └───star                            # S
-│   └───classification                          # Results obtained from EFSAR and other 9 EFSs in
+│   └───classification                          # Results obtained from EFS4SAR and other 9 EFSs in
                                                   classifying 15 data sets of activities 
 │   
 └───simulation                                  # The modules necessary to run a simulation
