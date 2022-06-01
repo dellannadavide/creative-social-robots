@@ -61,12 +61,12 @@ Creative Social Robots
 │
 └───results                                     # Results reported in the paper
 │   └───syntheticpatients/multiple_measurements # Results obtained for the synthesized patients
-│   └───noise                                   # Results obtained for S in the noise experiments
-│   └───baseline                                # S_B
-│   └───nodiv                                   # S_D
-│   └───norepcost                               # S_R
-│   └───star                                    # S
-│   └───classification                          # Results obtained from EFS4SAR and other 9 EFSs in
+│      └───noise                                   # Results obtained for S in the noise experiments
+│      └───baseline                                # S_B
+│      └───nodiv                                   # S_D
+│      └───norepcost                               # S_R
+│      └───star                                    # S
+│   └───classification/multiple_measurements    # Results obtained from EFS4SAR and other 9 EFSs in
                                                   classifying 15 data sets of activities 
 │   
 └───simulation                                  # The modules necessary to run a simulation
