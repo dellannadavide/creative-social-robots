@@ -278,13 +278,21 @@ class FuzzyPatientDSAgent(Agent):
 
     def getFeedbackForActivitiesinContexts(self, contexts, list_activities_ids, info_activities, default_feedback=-1):
         feedback = []
+        keys = [int(k) for k in info_activities.keys()]
+        min_key = min(keys)
+        max_key = max(keys)
         for i in range(len(contexts)):
             context = self.env.getRandomEnvVal()
             c_id = 0
             for c in context:
                 context[c] = contexts[i, c_id]
                 c_id = c_id + 1
-            prop_activity = info_activities[str(int(list_activities_ids[i]))]
+            id_act = int(list_activities_ids[i])
+            if id_act<min_key:
+                id_act=min_key
+            if id_act>max_key:
+                id_act=max_key
+            prop_activity = info_activities[str(id_act)]
             # print(list_activities_ids[i])
             # print(prop_activity)
             # print(self.actions_centers)

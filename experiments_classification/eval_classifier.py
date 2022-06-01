@@ -69,11 +69,12 @@ if __name__ == '__main__':
     This file is used to evaluate the results of the classifiers in terms of accuracy, feedback received from the patient and number of repetitions in the suggestions.
     """
     data_folder = "../simulation/data/survey/"
-    results_folder = "../results/classification/"
-    use_memory = False
-    results_file = results_folder + "RES_benchmarks_s.csv"
-    # use_memory = True
-    # results_file = results_folder + "RES_benchmarks_m.csv"
+    results_folder = "../results/classification/multiple_measurements/5x/anfisga/"
+
+    # use_memory = False
+    # results_file = results_folder + "RES_benchmarks_s.csv"
+    use_memory = True
+    results_file = results_folder + "RES_benchmarks_m.csv"
     Path(results_folder).mkdir(parents=True, exist_ok=True)
     verbose = Constants.VERBOSE_FALSE
 
@@ -154,25 +155,41 @@ if __name__ == '__main__':
         patients[patient] = fuzzy_patient
 
 
-
+    # multiple_measurements = True
+    multiple_measurements = False
+    nr_measurements = 5
     results = []
 
     for file in os.listdir(results_folder):
         if file.endswith(".xlsx"):
+            print(file)
             filepath =  os.path.join(results_folder, file)
             predictions_file = pd.ExcelFile(filepath, engine='openpyxl')
-            predictions_sheet = predictions_file.parse(sheet_name="Predictions")
+            # predictions_sheet = predictions_file.parse(sheet_name="Predictions")
+            predictions_sheet = predictions_file.parse()
             efs_in_file = predictions_sheet["EFS"].unique()
             for efs in efs_in_file:
                 print("Analysing results of classifier "+ efs)
                 for ds in datasets_info.keys():
-                    pred = predictions_sheet.loc[(predictions_sheet["EFS"] == efs) & (predictions_sheet["Dataset"] == ds), "Prediction"].values
-                    int_pred = numpy.array([int(str(s).replace("[[", "").replace("]]", "")) for s in pred])
-                    # print(int_pred)
-                    # print(patients[ds].actions_centers)
-                    if(len(int_pred)>0):
-                        print("\tDataset " + ds)
-                        results.append([efs, ds] + evalAll_dict(X_test_sets[ds], y_test_sets[ds], int_pred, -1, datasets_info[ds], patients[ds]))
+                    if multiple_measurements:
+                        for m in range(nr_measurements):
+                            # print(m)
+                            pred = predictions_sheet.loc[(predictions_sheet["EFS"] == efs) & (
+                                        predictions_sheet["Dataset"] == ds) & (
+                                        predictions_sheet["Trial"] == m), "Prediction"].values
+                            int_pred = numpy.array([int(str(s).replace("[[", "").replace("]]", "")) for s in pred])
+                            if (len(int_pred) > 0):
+                                print("\tDataset " + ds +", Trial: "+str(m))
+                                results.append([efs, ds] + evalAll_dict(X_test_sets[ds], y_test_sets[ds], int_pred, -1,
+                                                                        datasets_info[ds], patients[ds]))
+                    else:
+                        pred = predictions_sheet.loc[(predictions_sheet["EFS"] == efs) & (predictions_sheet["Dataset"] == ds), "Prediction"].values
+                        int_pred = numpy.array([int(str(s).replace("[[", "").replace("]]", "")) for s in pred])
+                        # print(int_pred)
+                        # print(patients[ds].actions_centers)
+                        if(len(int_pred)>0):
+                            print("\tDataset " + ds)
+                            results.append([efs, ds] + evalAll_dict(X_test_sets[ds], y_test_sets[ds], int_pred, -1, datasets_info[ds], patients[ds]))
     print(results)
     results_df = pd.DataFrame(results,
                                     columns=['EFS', 'DS', 'accuracy', '#(rules)', 'avg feedback', 'std feedback', 'sum feedback',

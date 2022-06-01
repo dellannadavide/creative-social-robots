@@ -130,7 +130,7 @@ if __name__ == '__main__':
         'personalize': [True],
         'noise_probability': [0],  # should be in [0,1]
         'noise_type': ['none'],  # can be 'gaussian', 'inv_gaussian', 'reversed_feedback',
-        'trial': [0]  # can also be just one value [0]
+        'trial': [0,1,2,3,4]  # can also be just one value [0]
     }
 
     exp_res = []
@@ -162,9 +162,9 @@ if __name__ == '__main__':
         sim_param["last_n_steps_negative_repetition"] = exp_param["nr_steps"] * exp_param[
             "multiplier_last_n_step_negative_repetition"]
 
-        print(str(exp_param['patient_name']))
+        print(str(exp_param['patient_name'])+": trial "+str(exp_param['trial']))
 
-        results_file = results_folder + "RES_DS_" + str(exp_param['patient_name']) + ".csv"
+        results_file = results_folder + "RES_DS_" + str(exp_param['patient_name']) + "_" + str(exp_param['trial']) + ".csv"
         dataset_name = data_folder + "DS_" + str(exp_param['patient_name']) + ".csv"
         info_dataset_name = data_folder + "DS_" + str(exp_param['patient_name']) + "_info.csv"
         data = pd.read_csv(dataset_name, header=None)
@@ -215,8 +215,9 @@ if __name__ == '__main__':
         systems_to_compare = {"max-acc", "random", "ALLMo0", "SAFLS", "PSOALFS", "FWAadaBoostSOFIES",
                               "skmoefs-MPAES_RCS", "MEEFIS", "ETS",
                               "ANFIS-GA", "ANFIS-PSO"} #all beanchmarks (i.e., no SAR)
-        systems_to_compare = {"ANFIS-GA"}  # all beanchmarks (i.e., no SAR) apart from anfis
-        # systems_to_compare = {"ANFIS-PSO"}
+        systems_to_compare = {"max-acc", "random", "ALLMo0", "SAFLS", "PSOALFS", "FWAadaBoostSOFIES",
+                              "skmoefs-MPAES_RCS", "MEEFIS", "ETS"}  # all beanchmarks except for SAR and ANFIS
+        # systems_to_compare = {"ETS"}
 
         test_predictions = {}
         nr_rules = {}
