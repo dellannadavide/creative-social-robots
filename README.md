@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6673720.svg)](https://doi.org/10.5281/zenodo.6673720)
+
 # Creative Social Robot #
 
 This repository contains 
